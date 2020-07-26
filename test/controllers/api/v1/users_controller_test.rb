@@ -28,10 +28,8 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update user' do
-    patch api_v1_user_url(@user), params: {
-      user: { email: @user.email, password: '123456' },
-      headers: { Authorization: JsonWebToken.encode(user_id: @user.id) }
-    }, as: :json
+    patch api_v1_user_url(@user), params: { user: { email:
+  @user.email, password: '123456' } }, as: :json
     assert_response :success
   end
 
